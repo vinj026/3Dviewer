@@ -25,12 +25,7 @@ directionalLight.position.set(25, 10, 20);
 directionalLight.castShadow = true;
 directionalLight.shadow.mapSize.set(2560, 2560);
 directionalLight.shadow.bias = -0.001; // Mengurangi shadow acne
-directionalLight.shadow.camera.near = 0.5;
-directionalLight.shadow.camera.far = 100;
-directionalLight.shadow.camera.left = -20;
-directionalLight.shadow.camera.right = 20;
-directionalLight.shadow.camera.top = 20;
-directionalLight.shadow.camera.bottom = -20;
+
 scene.add(directionalLight);
 
 const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x080820, 5);
@@ -113,7 +108,7 @@ const planeMaterial = new THREE.ShaderMaterial({
     float blur = smoothstep(-0.5, 1.0, dist);
     vec3 color = mix(color1, color2, blur);
     gl_FragColor = vec4(color, 1.0);
-    }
+}
   `,
   depthWrite: false
 });
